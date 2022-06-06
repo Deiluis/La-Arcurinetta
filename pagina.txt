@@ -1,0 +1,9 @@
+-buscar referencias
+-estructurar
+-contenido HTML
+-contenido CSS
+-ejercicios de practica
+-diseñar
+-hacer logo
+-codificar diseño
+-hacer responsive
