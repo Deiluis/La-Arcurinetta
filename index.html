@@ -21,18 +21,25 @@
         </a>
         <nav class="nav">
             <ul class="nav__bar">
-                <li><a href="index.html" class="nav__link">Inicio</a></li>
-                <li><a href="#about-us" class="nav__link">Sobre nosotros</a></li>
+                <li>
+                    <a href="index.html" class="nav__link">Inicio</a>
+                </li>
+                <li>
+                    <a href="#about-course" class="nav__link">Introducción</a>
+                </li>
                 <li class="submenu-container">
                     <a href="#courses" class="nav__link nav__link--submenu">Cursos <i class="fa-solid fa-angle-down"></i></a>
                     <ul class="nav__submenu">
                         <li>
-                            <a href="tutoriales/curso-html.html" class="nav__link">HTML</a>
+                            <a href="cursos/curso-html.html" class="nav__link">HTML</a>
                         </li>
                         <li>
-                            <a href="tutoriales/curso-css.html" class="nav__link">CSS</a>
+                            <a href="cursos/curso-css.html" class="nav__link">CSS</a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="#about-us" class="nav__link">Sobre nosotros</a>
                 </li>
             </ul>
         </nav>
@@ -43,18 +50,24 @@
 
         <section class="banner">
             <h2>&lt;h2&gt;Enseñanando a programar, programando&lt;/h2&gt;</h2>
-            <i class="fa-solid fa-angle-down"></i>
+            <a href="#about-course">
+                <i class="fa-solid fa-angle-down"></i>
+            </a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="waves">
                 <path fill="#222" fill-opacity="1" d="M0,96L60,128C120,160,240,224,360,218.7C480,213,600,139,720,133.3C840,128,960,192,1080,213.3C1200,235,1320,213,1380,202.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
             </svg>
         </section>
 
-        <section class="about-us" id="about-us">
-            <h2>Sobre nosotros</h2>
+        <section class="about-course" id="about-course">
+            <h2>Introducción</h2>
             <p>
-                "La Arcurinetta" nació como un proyecto web en la clase de Laboratorio de Aplicaciones, su nombre proviene del profesor de esta materia, Hugo Arcuri. En La Arcurinetta buscamos instruir a los entusiastas a programadores y programadoras para aprender desarrollo web de una forma sencilla y rápida con tutoriales concisos y ejercicios de práctica.
+                Al crear páginas web, se requiere de <em>tres lenguajes web</em> para su pleno funcionamiento, estos lenguajes son <strong>HTML, CSS y JavaScript</strong>. HTML se utiliza para estructurar los elementos de la página, CSS les da estilo a estos elementos, tales como colores, margenes o incluso animaciones. Por último, JavaScript le da interactividad con el usuario, pudiendo modificar la página dinámicamente.
+            </p>
+            <p>
+                En estos cursos se abordarán únicamente HTML para la estructura de las páginas web y CSS para su estilo.
             </p>
         </section>
+
 
         <section class="courses" id="courses">
             <h2>Cursos</h2>
@@ -64,7 +77,7 @@
                 <p>
                     <strong>HTML</strong> o <em>HyperText Markup Language</em> es un lenguaje de marcado de hipertexto utilizado en desarrollo web para estructurar la composición de los documentos o páginas web.
                 </p>
-                <a href="tutoriales/curso-html.html">Ir al curso</a>
+                <a href="cursos/curso-html.html">Ir al curso</a>
 
                 <div class="code">
                     &lt;<span class="tag">!DOCTYPE html</span>&gt;<br>
@@ -85,7 +98,7 @@
                 <p>
                     <strong>CSS</strong> o <em>Cascading Stylesheets</em> es un lenguaje de hojas de estilo utilizado en desarrollo web para dar estilos a los documentos o páginas web.
                 </p>
-                <a href="tutoriales/curso-css.html">Ir al curso</a>
+                <a href="cursos/curso-css.html">Ir al curso</a>
 
                 <div class="code">
                     <span class="selector">h1</span> {<br>
@@ -101,6 +114,13 @@
                     }<br>
                 </div>
             </div>
+        </section>
+
+        <section class="about-us" id="about-us">
+            <h2>Sobre nosotros</h2>
+            <p>
+                "La Arcurinetta" nació como un proyecto web en la clase de Laboratorio de Aplicaciones, su nombre proviene del profesor de esta materia, Hugo Arcuri. En La Arcurinetta buscamos instruir a los entusiastas a programadores y programadoras para aprender desarrollo web de una forma sencilla y rápida con tutoriales concisos y ejercicios de práctica.
+            </p>
         </section>
 
     </main>

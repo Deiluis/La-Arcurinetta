@@ -32,7 +32,7 @@ window.addEventListener("scroll", () => {
 
 subMenuBtn.addEventListener("click", () => {
 
-    if(window.innerWidth < 1024) {
+    if(window.innerWidth <= 1024) {
 
         const height = subMenu.scrollHeight;
         
@@ -46,6 +46,9 @@ subMenuBtn.addEventListener("click", () => {
     }
 });
 
-subMenuLink.addEventListener("click", e => {
-    e.preventDefault();
-})
+if (window.innerWidth <= 1024) {
+
+    subMenuLink.addEventListener("click", e => {
+        e.preventDefault();
+    })
+}
