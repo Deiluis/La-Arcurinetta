@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Arcurinetta - HTML</title>
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/curso-html.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +20,7 @@
     <header>
 
         <a href="index.html" class="h1-link">
-            <h1>La Arcurinetta</h1>
+            <h1 class="title">La Arcurinetta</h1>
         </a>
         <nav class="nav">
             <ul class="nav__bar">
@@ -50,9 +52,635 @@
 
     <main>
 
-        <section class="history" id="history"></section>
+        <section class="title">
+            <h2>Curso de HTML 5</h2>
+        </section>
+
+        <section class="history" id="history">
+            <h2>Algo de historia sobre HTML</h2>
+            <h3>El origen</h3>
+            <div>
+                <p>
+                    En 1980, <strong>Tim Berners-Lee</strong>, un fisico e ingeniero britanico empleado del CERN (Centro Europeo de Fisica Nuclear) propuso un nuevo
+                    sistema de hipertexto para compartir documentos. Tras finalizarlo, lo presento en un concurso en la empresa para solucionar el problema de la comunicacion;
+                    presentó el mismo junto con el lenguaje para escribirlo: <strong>HTML</strong> o <em>HyperText Markup Language</em> y el primer documento formal escrito en este lenguaje,
+                    cuyo nombre inicialmente fue HTML tags, o etiquetas HTML. Se ha hecho una recreación y se puede visualizar desde navegadores modernos haciendo
+                    <a href="https://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html" target="_BLANK">click acá</a>.
+                </p>
+                <img src="../assets/img/tim-berners-lee.jpg" alt="Tim Berners-Lee en 1991." title="Tim Berners-Lee en 1991">
+            </div>
+            <h3>¿Cómo siguio?</h3>
+            <p>
+                En 1996 se creo el <strong>W3C</strong> o <em>World Wide Web Consortium</em> como organismo que se encargaría de establecer
+                los estandares generales para HTML y su correcto funcionamiento en la red. La W3C publica posteriormente
+                HTML 3.2 en 1997, que posee applets de Java para el texto y las imagenes. Luego HTML 4.0 en 1998, y HTML 4.01,
+                una mejora de este ultimo, en 1999.
+            </p>
+            <p>
+                Desde la publicación de HTML 4.01, el W3C se centro principalmente en el desarrollo del estandar <strong>XHTML</strong>,
+                hasta el 2008 cuando retomaron el desarrollo del estandar HTML, para finalmente publicar <strong>HTML 5</strong> en 2014.
+            </p>
+            <p>
+                Ahora que ya sabemos un poco más sobre la historia de este lenguaje, veamos sus contenidos.
+            </p>
+        </section>
+
+        <section class="contents" id="contents">
+            <h2>Contenidos</h2>
+
+            <div class="topic" id="html-elements">
+                <h3>Elementos HTML</h3>
+                
+                <div class="topic-content">
+                    <p>
+                        La base de todo en HTML son los elementos. Un elemento es una especie de "caja" que el navegador dibuja en nuestra pantalla; estas cajas componenen toda la estructura HTML.
+                    </p>
+    
+                    <p>
+                        Ya sabiendo que es un elemento, debemos saber que este tiene ciertas partes. Las partes que conforman al elemento son:
+                    </p>
+    
+                    <ul>
+                        <li>La etiqueta de apertura.</li>
+                        <li>El contenido.</li>
+                        <li>La etiqueta de cierre.</li>
+                    </ul>
+    
+                    <p>
+                        Estas partes son fragmentos del código que nos permiten crear elementos. El primer elemento que veremos como ejemplo es <code>&lt;h1&gt;</code> que nos permite escribir el encabezado principal de la página.
+                    </p>
+    
+                    <p>
+                        Al crear un elemento h1, debemos escribirlo de la siguiente manera: <code>&lt;h1&gt;Hola mundo&lt;/h1&gt;</code>. En este caso, <code>&lt;h1&gt;</code> es la etiqueta de apertura, la cual se escribe con los signos de menor y mayor (&lt; y &gt;) y el nombre de la etiqueta en medio, quedando <code>&lt;h1&gt;</code>. Luego de la etiqueta de apertura se introduce el contenido deseado que se muestre en pantalla, que en este caso es <code>Hola mundo</code>, pero puede ser cualquier texto, o incluso otros elementos, pero veremos eso más adelante. Para finalizar se escribe la etiqueta de cierre, la cual es similar a la etiqueta de apertura, pero esta contiene una barra inclinada o slash antes del nombre de la etiquta, quedando: <code>&lt;/h1&gt;</code>.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">h1</span>&gt;Hola mundo&lt;/<span class="tag">h1</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="basic-structure">
+                <h3>Estructura básica de HTML</h3>
+
+                <div class="topic-content">
+                    <p>
+                        Para que nuestro navegador pueda interpretar nuestro código HTML debemos cumplir dos condiciones primero:
+                    </p>
+    
+                    <ol>
+                        <li>Nuestro archivo debe ser formato HTML (que sea terminado en .html).</li>
+                        <li>Nuestro archivo debe contener los elementos <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.</li>
+                    </ol>
+    
+                    <p>
+                        El elemento <code>&lt;!DOCTYPE html&gt;</code> le indica al navegador que versión de HTML se esta utilizando. El elemento <code>&lt;html&gt;</code> el elemento de mayor jerarquía en nuestra página, ya que contiene a los elementos <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>. El elemento <code>&lt;head&gt;</code> o "cabeza" contiene toda la información externa pero relevante de la página, tal como el titulo, el icono, los elementos <code>&lt;meta&gt;</code> para la codificación, el lenguaje, entre otras cosas que le ayudan al navegador a posicionar nuestra página web en los motores de búsqueda. Por último, el elemento <code>&lt;body&gt;</code> o "cuerpo" contiene todos los elementos visibles de nuestra página, los encabezados, párrafos, enlaces, entre otros que iremos viendo a lo largo del curso.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">!DOCTYPE html</span>&gt;<br>
+                            &lt;<span class="tag">html</span>&gt;<br>
+                            &lt;<span class="tag">head</span>&gt;<br>
+                            &lt;<span class="tag">meta</span><span class="attr"> charset</span>=<span class="value">UTF-8</span>&gt;<br>
+                            &lt;<span class="tag">title</span>&gt;Título&lt;/<span class="tag">title</span>&gt;<br>
+                            &lt;/<span class="tag">head</span>&gt;<br>
+                            &lt;<span class="tag">body</span>&gt;<br>
+                            &lt;<span class="tag">h1</span>&gt;Hola mundo&lt;/<span class="tag">h1</span>&gt;<br>
+                            &lt;/<span class="tag">body</span>&gt;<br>
+                            &lt;/<span class="tag">html</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="headings">
+                <h3>Encabezados</h3>
+
+                <div class="topic-content">
+                    <p>
+                        Como mencionamos anteriormente, el elemento <code>&lt;h1&gt;</code> sirve para introducir el encabezado o título principal de la página, pero como tal, existen <em>cinco elementos</em> más que cumplen esta función, estos son: <code>&lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, y &lt;h6&gt;</code>. La principal diferencia entre cada uno de estos elementos es su <strong>su función como título</strong>.
+                    </p>
+                    <p>
+                        Por ejemplo: <code>&lt;h1&gt;</code> se utiliza para el título principal de la página, y solo debe introducirse uno por documento, ya que cómo se dijo, es el título PRINCIPAL, y escribir más de uno podría confundir al navegador y posicionar mal nuestra página en la web. Siguiendo con los elementos, <code>&lt;h2&gt;</code> se utiliza como subtitulos, o titulos de secciones, <code>&lt;h3&gt;</code> como subtitulos de secciones, por último <code>&lt;h4&gt;, &lt;h5&gt; y &lt;h6&gt;</code> se utilizan para subtitular componentes de menor importancia.
+                    </p>
+                    <p>Cabe remarcar el cuidado que se debe tener en la repetición de los elementos de titulo según su jerarquía (mientras más alta sea esta, menos veces debe utilizarse), como también se debe tener en cuenta cuando usar cada uno basado en la función descrita anteriormente, y no basarse en el tamaño de letra, ya que de guiarnos de esta manera, podemos posicionar de mala manera nuestro sitio web, tal como se explico anteriormente.</p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">h1</span>&gt;Esto es un h1&lt;/<span class="tag">h1</span>&gt;<br>
+                            &lt;<span class="tag">h2</span>&gt;Esto es un h2&lt;/<span class="tag">h2</span>&gt;<br>
+                            &lt;<span class="tag">h3</span>&gt;Esto es un h3&lt;/<span class="tag">h3</span>&gt;<br>
+                            &lt;<span class="tag">h4</span>&gt;Esto es un h4&lt;/<span class="tag">h4</span>&gt;<br>
+                            &lt;<span class="tag">h5</span>&gt;Esto es un h5&lt;/<span class="tag">h5</span>&gt;<br>
+                            &lt;<span class="tag">h6</span>&gt;Esto es un h6&lt;/<span class="tag">h6</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="paragraphs">
+                <h3>Párrafos y modificadores de texto</h3>
+                
+                <div class="topic-content">
+                    <p>
+                        Ya hemos visto elementos de encabezado para los títulos, ahora es el turno de los elementos de párrafo y los modificadores del texto.
+                    </p>
+                    <p>
+                        Para iniciar un nuevo párrafo en nuestra página, se utiliza el elemento <code>&lt;p&gt;</code>. Tal como los elementos de encabezado, este requiere de una etiqueta de apertura y de cierre; entre estas dos ira el contenido que queremos mostrar en nuestro párrafo. Cabe aclarar que se debe utilizar un elemento de párrafo por cada párrafo, y no introducir todo nuestro texto en un mismo párrafo aplicando saltos de línea.
+                    </p>
+                    <p>
+                        También existen los elementos <strong>modificadores de texto</strong>, los cuales modifican visualmente el texto que este encerrado entre ellos. Algunos de ellos son:
+                    </p>
+    
+                    <ul>
+                        <li>El elemento <b><code>&lt;b&gt;</code></b>, de bold o negrita.</li>
+                        <li>El elemento <i><code>&lt;i&gt;</code></i>, de italic o italica.</li>
+                        <li>El elemento <strong><code>&lt;strong&gt;</code></strong>, en negrita con una importancia semántica.</li>
+                        <li>El elemento <em><code>&lt;em&gt;</code></em>, en italca con una importancia semántica.</li>
+                        <li>El elemento <small><code>&lt;small&gt;</code></small>, o pequeño.</li>
+                        <li>El elemento <strike><code>&lt;strike&gt;</code></strike>, o tachado.</li>
+                        <li>El elemento <span><code>&lt;span&gt;</code></span>, o separador de texto invisible.</li>
+                    </ul>
+    
+                    <p>
+                        Para utilizar cualquiera de estos modificadores, unicamente se debe encerrar entre sus etiquetas el texto que se quiere modificar. Habrán notado que los elementos <code>&lt;strong&gt; y &lt;em&gt;</code> son exactamente iguales a los elementos <code>&lt;b&gt; e &lt;i&gt;</code>. La principal diferencia es que <code>&lt;strong&gt; y &lt;em&gt;</code> tienen importancia "semántica", pero más adelante en el curso se tratará ese topico.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">p</span>&gt;Párrafo sin modificadores.&lt;/<span class="tag">p</span>&gt;<br><br>
+                            &lt;<span class="tag">p</span>&gt;<br>
+                                Lorem ipsum, dolor sit amet &lt;b&gt;consectetur&lt;/b&gt; adipisicing elit. Dolorum rerum ad nostrum facere quas &lt;i&gt;quibusdam&lt;/i&gt; ut, perspiciatis officia delectus &lt;span&gt;sapiente&lt;span&gt; non pariatur laborum quia eius eligendi sequi esse error id!<br>
+                            &lt;/<span class="tag">p</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="links">
+                <h3>Enlaces</h3>
+
+                <div class="topic-content">
+                    <p>
+                        Ya sabemos insertar títulos, párrafos, e incluso modificar textos, pero ahora surge una duda: ¿Hay alguna manera simple de navegar entre páginas de una misma web? Para solucionar esto existen los elementos de enlace, representados con los elementos <code>&lt;a&gt;</code>.
+                    </p>
+    
+                    <p>
+                        Los elementos <code>&lt;a&gt;</code> funcionan como enlaces a otros documentos HTML, y para su correcto funcionamiento se escriben de la siguiente manera: &lt;<span>a</span><span> href</span>=<span>#</span>&gt;Click acá&lt;/<span>a</span>&gt;. Cómo podemos observar, estos elementos hacen uso de un componente nuevo para nosotros, este componente son los <strong>atributos de los elementos</strong> y los <strong>elementos sensibles</strong>. 
+                    </p>
+    
+                    <p>
+                        Los atributos son una serie de parametros que definen o modifican al elemento, y cada debe tener un valor. Estos atributos deben definirse en la etiqueta de apertura del elemento, debe escribirse el nombre del atributo, un signo igual (=) y el valor del atributo entre comillas (""). En este caso, el elemento <code>&lt;a&gt;</code> utiliza el atributo <code>href</code>, el cual tiene un valor de <code>#</code>, pero este valor puede ser cambiado; distintos valores en ciertos atributos pueden modificar el funcionamiento de los elementos a los cuales son aplicados. Por ejemplo:  
+                    </p>
+    
+                    <ul>
+                        <li>
+                            Si se utiliza un númeral (#) y un determinado <strong>id</strong> correspondiente a un elemento del mismo documento, se puede acceder hasta dicho elemento.
+                        </li>
+                        <li>
+                            Si se utiliza una ruta de acceso a un archivo local, se puede acceder hasta el mismo.
+                        </li>
+                        <li>
+                            Si se utiliza una url de otra página web, se puede acceder a la misma. Si ademas se añade el atributo <code>target</code> con el valor <code>"_blank"</code> se puede acceder a esta nueva página, abriendo una nueva pestaña para la misma.
+                        </li>
+                        <li>
+                            Si solo se utiliza un númeral (#) como en el primer ejemplo, no se realiza ninguna acción.
+                        </li>
+                        <li>Si no se coloca ningun valor, el elemento <code>&lt;a&gt;</code> no posee un "elemento sensible".</li>
+                    </ul>
+    
+                    <p>
+                        El elemento sensible esta conformado por el contenido del elemento <code>&lt;a&gt;</code>. Es este mismo el que ejecuta la operación de redirección al hacer click o tocar en él, puede ser texto plano, o incluso otros elementos.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"#history"</span>&gt;Click acá para ir a la sección de historia&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"../index.html"</span>&gt;Click acá para volver al inicio&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"https://google.com"</span>&gt;Click acá para ir google.com&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"https://google.com"</span> <span class="attr"> target</span>=<span class="value">"_blank"</span>&gt;Click acá para ir google.com en una nueva pestaña&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"#"</span>&gt;Este enlace no hace nada&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">""</span>&gt;Este enlace no tiene elemento sensible&lt;/<span class="tag">a</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="topic" id="classes-id">
+                <h3>Atributos class y id</h3>
+
+                <div class="topic-content">
+                    <p>
+                        En el capitulo anterior se explicó el concepto de un atributo y se tomo de ejemplo el atributo <code>href</code>. Sin embargo, ese atributo es especifico de los elementos <code>&lt;a&gt;</code>. Existen otros atributos denominados "globales", los cuales pueden ser aplicados a cualquier elemento y funcionan de una manera general. Dos de estos son los atributos <code>class</code> e <code>id</code>.
+                    </p>
+    
+                    <p>
+                        Tanto <code>class</code> como <code>id</code> son atributos que sirven para identificar elementos. Sin embargo, la principal diferencia entre estos es la cantidad de elementos que pueden ser referenciados con estos atributos. Por ejemplo: <code>class</code> puede utilizar un mismo valor para identificar a un cierto grupo de elementos de una misma clase, mientras que <code>id</code> solo puede utilizar un mismo valor una sola vez, para identificar un solo elemento especifico.
+                    </p>
+    
+                    <p>
+                        Algo adicional a mencionar: Si a un elemento se le añade un <code>id</code>, este puede ser ubicado utilizando enlaces, tal como se mostró en los ejemplos del capítulo anterior.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">p</span><span class="attr"> class</span>=<span class="value">"parrafos"</span>&gt;Párrafos con clase.&lt;/<span class="tag">p</span>&gt;<br>
+                            &lt;<span class="tag">p</span><span class="attr"> class</span>=<span class="value">"parrafos"</span>&gt;Párrafos con clase.&lt;/<span class="tag">p</span>&gt;<br>
+                            &lt;<span class="tag">p</span><span class="attr"> class</span>=<span class="value">"parrafos"</span>&gt;Párrafos con clase.&lt;/<span class="tag">p</span>&gt;<br><br>
+                            &lt;<span class="tag">p</span><span class="attr"> id</span>=<span class="value">"parrafo-id"</span>&gt;Párrafo con id.&lt;/<span class="tag">p</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="images">
+                <h3>Imágenes</h3>
+
+                <div class="topic-content">
+                    <p>
+                        Hasta ahora hemos trabajado puramente con texto, enlaces, y modificadores de los mismos, en este capitulo veremos como utilizar imágenes. Para insertar una imagen se utiliza el elemento <code>&lt;img&gt;</code>, cuya sintaxis para su correcto funcionamiento es: <code>&lt;<span>img</span><span> src</span>=<span>"imagen.png"</span>&gt;</code>.
+                    </p>
+    
+                    <p>
+                        Viendo el elemento <code>&lt;img&gt;</code> podremos notar dos cosas principales:
+                    </p>
+    
+                    <ol>
+                        <li>No posee etiqueta de cierre.</li>
+                        <li>Utiliza un nuevo atributo: <code>src</code>.</li>
+                    </ol>
+    
+                    <p>
+                        Los elementos <code>&lt;img&gt;</code> como varios otros no poseen etiqueta de cierre, por lo que se les considera elementos "abiertos." En adición a lo anterior, podemos ver que el nuevo atributo <code>src</code> (de source, o fuente en ingles) debe contener la ruta exacta de la imagen a utilizar. Tal como en los enlaces, la ruta puede ser local (nuestra misma PC) o remota (desde internet) pero siempre debe contener la extensión de la imagen para poder funcionar correctamente.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">img</span><span class="attr"> src</span>=<span class="value">"../assets/img/carpincho.jpg"</span>&gt;<br>
+                            &lt;<span class="tag">img</span><span class="attr"> src</span>=<span class="value">"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Capybara_portrait_2.jpg/800px-Capybara_portrait_2.jpg"</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="divs">
+                <h3>Divisores</h3>
+
+                <div class="topic-content">
+                    <p>
+                        En este capítulo se abordará un nuevo elemento: el <code>&lt;div&gt;</code>.
+                    </p>
+    
+                    <p>
+                        El elemento <code>&lt;div&gt;</code> es un divisor o contenedor genérico e invisible de elementos. Este se utiliza para armar diferentes componentes, separados de manera lógica. Una vez se dibuja todo en el navegador, el div no se visualiza, ya que solo actua como contenedor (a menos que se le colores u otras propiedades en CSS).
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">div</span>&gt;<br>
+                            &lt;<span class="tag">h2</span>&gt;Esto esta dentro del div 1&lt;/<span class="tag">h2</span>&gt;<br>
+                            &lt;/<span class="tag">div</span>&gt;<br><br>
+                            &lt;<span class="tag">div</span>&gt;<br>
+                            &lt;<span class="tag">p</span>&gt;Esto esta dentro del div 2&lt;/<span class="tag">p</span>&gt;<br>
+                            &lt;/<span class="tag">div</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="inline-block">
+                <h3>Elementos en línea y en bloque</h3>
+
+                <div class="topic-content">
+                    <p>
+                        En este capitulo se tratará un más tema conceptual: Los elementos en línea y los elementos en bloque.
+                    </p>
+    
+                    <p>
+                        Existen dos maneras principales de mostrar los elementos en el navegador: en línea, o en un bloque. Los elementos en linea, al dibujarse, unicamente toman el espacio que ocupan fisicamente: si ocupa 30 píxeles de ancho, solo toma 30 píxeles del ancho total de la pantalla. Por otro lado, los elementos en bloque toman el espacio de toda la linea que ocupan. Por ejemplo, si el elemento ocupa 30 píxeles de ancho, aún así tomara todo el espacio de la línea, obligando al navegador a dibujar el resto de elementos en las lineas siguientes.
+                    </p>
+    
+                    <p>
+                        Algunos elementos en línea son los <code>&lt;a&gt;, &lt;b&gt;, &lt;i&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;img&gt;</code>, entre otros. Algunos elementos en bloque son los <code>&lt;h1&gt;-&lt;h6&gt;, &lt;p&gt;, &lt;div&gt;, &lt;br&gt;</code>, entre otros.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">h1</span>&gt;Esto es un h1 (bloque)&lt;/<span class="tag">h1</span>&gt;<br>
+                            &lt;<span class="tag">p</span>&gt;Esto es un párrafo (bloque)&lt;/<span class="tag">p</span>&gt;<br>
+                            &lt;<span class="tag">a</span><span class="attr"> href</span>=<span class="value">"#"</span>&gt;Esto es un enlace (línea)&lt;/<span class="tag">a</span>&gt;<br>
+                            &lt;<span class="tag">b</span>&gt;Esto está en negrita (línea)&lt;/<span class="tag">b</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="lists">
+                <h3>Elementos de lista</h3>
+
+                <div class="topic-content">
+                    <p>
+                        En este capítulo se aboradará un nuevo tema: Las listas de elementos.
+                    </p>
+    
+                    <p>
+                        Para crear una lista de elementos, existen dos tipos de elementos de lista distintos: <code>&lt;ol&gt;</code> (de ordered list, o lista ordenada) y <code>&lt;ul&gt;</code> (de unordered list, o lista desordenada). La principal diferencia entre ambas son el tipo de items que utilizan, <code>&lt;ol&gt;</code> utiliza un formato numerado, desde el 1 hasta el número máximo que se utilice. Por el otro lado, <code>&lt;ul&gt;</code> utiliza un formato de puntos negros o viñetas como items, sin números ni un orden especifico.
+                    </p>
+    
+                    <p>
+                        En ambos casos, para armar la lista, debemos introducir dentro de la etiqueta <code>&lt;ol&gt; o &lt;ul&gt;</code> un nuevo elemento, el item de lista o elemento <code>&lt;li&gt;</code> (list item). Dentro de los items es donde se incluye el contenido a enlistar, ya sean textos u otros elementos.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">ol</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;HTML&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;CSS&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;JS&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;/<span class="tag">ol</span>&gt;<br><br>
+                            &lt;<span class="tag">ul</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;PHP&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;Python&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;<span class="tag">li</span>&gt;Java&lt;/<span class="tag">li</span>&gt;<br>
+                            &lt;/<span class="tag">ul</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topic" id="semantic-html">
+                <h3>HTML semántico</h3>
+
+                <div class="topic-content">
+                    <p>
+                        En capítulos anteriores se mencionó el tema del <strong>HTML semántico</strong>. En este capítulo se ahondará más sobre el tema; conoceremos el concepto, y los elementos semánticos.
+                    </p>
+    
+                    <p>
+                        Para el posicionamiento de las páginas web en los navegadores, los motores web utilizan una herramienta llamada <strong>SEO</strong> o <em>Search Engine Optimization</em>. Esta se encarga de revisar y comprobar que los documentos HTML mantengan un cierta lógica y una buena semántica; tal cómo un texto necesita posee coherencia y cohesión, una página web debe mantener una buena semántica.
+                    </p>
+    
+                    <p>
+                        Para mantener una buena semántica, se utilizan los <strong>elementos semánticos</strong>. Estos son elementos que tienen un rol especifico asignado al documento. Por ejemplo, los elementos <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>, que tienen un rol o función especifica unicamente como títulos. Existen varios elementos semánticos, estos son:
+                    </p>
+    
+                    <ul>
+                        <li>El <code>&lt;header&gt;</code> o encabezado.</li>
+                        <li>El <code>&lt;nav&gt;</code> o barra de navegación.</li>
+                        <li>El <code>&lt;main&gt;</code> o contenido principal.</li>
+                        <li>El <code>&lt;section&gt;</code> o sección de contenido.</li>
+                        <li>El <code>&lt;article&gt;</code> o artículo de la sección.</li>
+                        <li>El <code>&lt;aside&gt;</code> o contenido adicional o publicitario que se ubica a un costado.</li>
+                        <li>El <code>&lt;footer&gt;</code> o pie de página.</li>
+                        <li>Los <code>&lt;h1&gt; a &lt;h6&gt;</code> o los titulos.</li>
+                        <li>El <code>&lt;strong&gt;</code> o resaltado en negrita.</li>
+                        <li>El <code>&lt;em&gt;</code> o resaltado en italica.</li>
+                    </ul>
+    
+                    <p>
+                        El buen uso y posicionamiento de los elementos semánticos nos garantizarán una buena semántica en nuestro sitio web.
+                    </p>
+    
+                    <h3>Veamos un ejemplo gráfico:</h3>
+    
+                    <ul>
+                        <li>Clickeá en "Ejecutar" para mostrar cómo se ve el código ya ejecutado en el navegador.</li>
+                        <li>Clickeá en "Reiniciar" para reiniciar la simulación.</li>
+                        <li>Clickeá en "Copiar" para copiar el codigo a tu portapapeles.</li>
+                    </ul>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            &lt;<span class="tag">header</span>&gt;<br>
+                            &lt;<span class="tag">h1</span>&gt;Título&lt;/<span class="tag">h1</span>&gt;<br>
+                            &lt;<span class="tag">nav</span>&gt;
+                            &lt;/<span class="tag">nav</span>&gt;<br>
+                            &lt;/<span class="tag">header</span>&gt;<br><br>
+                            &lt;<span class="tag">main</span>&gt;<br>
+                            &lt;<span class="tag">section</span>&gt;<br>
+                            &lt;<span class="tag">h2</span>&gt;Sección 1&lt;/<span class="tag">h2</span>&gt;<br>
+                            &lt;/<span class="tag">section</span>&gt;<br>
+                            &lt;<span class="tag">section</span>&gt;<br>
+                            &lt;<span class="tag">h2</span>&gt;Sección 2&lt;/<span class="tag">h2</span>&gt;<br>
+                            &lt;<span class="tag">article</span>&gt;
+                            &lt;/<span class="tag">article</span>&gt;<br>
+                            &lt;/<span class="tag">section</span>&gt;<br>
+                            &lt;/<span class="tag">main</span>&gt;<br><br>
+                            &lt;<span class="tag">footer</span>&gt;<br>
+                            &lt;/<span class="tag">footer</span>&gt;<br>
+                        </div>
+                    
+                        <div class="result"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="finish">
+            <h2>Próximos pasos</h2>
+            <p>
+                Si lograste leer todos los contenidos y hacer las pruebas en código ¡Felicidades! Llegaste hasta el final del curso de HTML 5. Ahora, para seguir tu camino como desarrollador web, debes aprender a dar estilos a tus páginas WEB, y para esto debes aprender CSS, pero no te preocupes, también tenemos un curso de CSS para vos. Para acceder a él, simplemente hace click en "IR AL CURSO". ¡Mucha suerte!
+            </p>
+            <a href="curso-css.html">Ir al curso</a>
+        </section>
 
     </main>
+
+    <footer class="footer">
+        <h4>La Arcurinetta© - Todos los derechos resverados.</h4>
+        <div>
+            <h4>Alumnos participantes:</h4>
+            <ul>
+                <li>Barreto Michael</li>
+                <li>Conforti Luis</li>
+                <li>Diez Alejandro</li>
+                <li>Escudero Lucas</li>
+            </ul>
+        </div>
+        <a href="https://github.com/Deiluis" title="Github"><i class="fa-brands fa-github"></i></a>
+    </footer>
     
+    <script src="../assets/js/ejecutar.js"></script>
 </body>
 </html>

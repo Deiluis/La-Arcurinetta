@@ -1,0 +1,36 @@
+.footer {
+    height: 40vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--blanco);
+    text-align: center;
+    background: #000;
+}
+
+.footer h4 {
+    font-family: var(--titulos);
+    font-size: 2rem;
+}
+
+.footer ul {
+    list-style: none;
+    font-family: var(--parrafos-links);
+    font-size: 1.8rem;
+}
+
+.footer li {
+    margin: 10px 0;
+}
+
+.footer a {
+    font-size: 10rem;
+    color: var(--blanco);
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        flex-direction: column;
+        height: 70vh;
+    }
+}
