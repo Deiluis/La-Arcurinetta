@@ -19,6 +19,10 @@ body {
     background-color: var(--negro);
 }
 
+code {
+    background-color: #444;
+}
+
 .title h2 {
     text-align: center;
     font-size: 5rem;
@@ -46,14 +50,14 @@ body {
 .history h3 {
     font-size: 3rem;
     font-family: var(--titulos);
-    padding: 5rem;
+    padding: 12rem 0 5rem;
 }
 
 .history p {
     text-align: center;
     font-size: 1.8rem;
     font-family: var(--parrafos-links);
-    width: 70%;
+    width: clamp(70%, 800px, 95%);
     line-height: 2;
     letter-spacing: 1.1;
 }
@@ -68,9 +72,11 @@ body {
 }
 
 .history img {
-    width: 50%;
+    width: clamp(50%, 450px, 95%);
     margin-left: 30px;
     border: 4px solid #0070b6;
+    object-fit: cover;
+    object-position: right;
 }
 
 .contents {
@@ -81,29 +87,36 @@ body {
     padding-bottom: 15rem;
 }
 
-.contents h2 {
+.contents-title {
     color: var(--blanco);
     font-size: 4rem;
     font-family: var(--titulos);
-    margin-top: 10rem;
+    margin: 10rem 0 7rem;
 }
 
 .topic {
-    width: 60%;
+    width: clamp(60%, 1000px, 95%);
     margin: 2rem 0;
-    background-color: var(--gris-claro);
-    padding: 1.5rem;
+    background-color: var(--negro);
+    padding: 0 2.5rem;
+    padding-top: 0;
+    border-bottom: 5px solid var(--gris);
+    border-radius: 10px;
+    color: var(--blanco);
 }
 
 .topic-content {
     height: 0;
     overflow: hidden;
+    transition: height 1.5s;
 }
 
-.topic h3 {
-    font-size: 3rem;
+.topic-title {
+    font-size: 3.5rem;
     font-family: var(--titulos);
     text-align: center;
+    padding: 3rem;
+    cursor: pointer;
 }
 
 .topic p, .topic li {
@@ -117,12 +130,20 @@ body {
     margin-left: 40px;
 }
 
+.code-title {
+    font-family: var(--titulos);
+    text-align: left;
+    font-size: 2.5rem;
+    padding: 5rem 1rem 3rem;
+}
+
 .code-section {
-    width: 800px;
+    width: 100%;
     display: grid;
-    grid-template-rows: 70px minmax(100px, auto);
+    grid-template-rows: 70px minmax(200px, auto);
     grid-template-columns: 50% 45%;
     column-gap: 5%;
+    row-gap: 5%;
 }
 
 .buttons {
@@ -132,7 +153,7 @@ body {
 
 .button {
     text-decoration: none;
-    font-family: 'Roboto Slab', serif;
+    font-family: var(--parrafos-links);
     color: #fff;
     background-color: #04b5b8;
     margin: 5px;
@@ -148,15 +169,50 @@ body {
 .code {
     font-family: monospace;
     font-size: 1.6rem;
-    color: #222;
-    background-color: #eee;
+    color: var(--negro);
+    background-color: var(--blanco);
     padding: 5px;
+    overflow: scroll;
+    border: 3px solid #bbb;
 }
 
 .result {
-    border: 1px solid #bbb;
-    font-size: 162.5%;
+    border: 3px solid #bbb;
+    font-size: 2rem;
     background-color: var(--blanco);
+    color: var(--negro);
+    overflow: scroll;
+}
+
+.result h1,
+.result h2,
+.result h3,
+.result h4,
+.result h5,
+.result h6,
+.result p {
+    margin: 0.67rem 0;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1;
+}
+
+.result a {
+    font-size: 1.6rem;
+}
+
+.result header {
+    position: static;
+    background: var(--blanco);
+    display: block;
+    height: auto;
+}
+
+.result h1 {
+    font-size: 2em;
+}
+
+.result img {
+    width: 100%;
 }
 
 .tag {
@@ -210,12 +266,24 @@ body {
     background-color: #9d0063;
 }
 
+@media screen and (max-width: 1400px) {
+    .history div {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .history img {
+        margin: 4rem 0 0;
+    }
+}
+
 @media screen and (max-width: 800px) {
 
     .code-section {
         width: auto;
         grid-template-rows: 70px minmax(100px, auto) minmax(120px, auto);
-        grid-template-columns: 90%;
+        grid-template-columns: 100%;
         justify-content: center;
         column-gap: 0;
     }

@@ -1,4 +1,4 @@
-const sectionList = document.querySelectorAll("section");
+const sectionList = document.querySelectorAll(".code-section");
 const code = document.querySelectorAll(".code");
 const execute = document.querySelectorAll(".execute");
 const restart = document.querySelectorAll(".restart");
@@ -32,16 +32,20 @@ for (let i = 0; i < sectionList.length; i++) {
     execute[i].addEventListener("click", e => {
         e.preventDefault();
         result[i].innerHTML = texto;
+        topicContent[i].style.height = topicContent[i].scrollHeight + "px";
     })
 
     restart[i].addEventListener("click", e => {
         e.preventDefault();
         result[i].innerHTML = "";
+        copy[i].innerHTML = 'Copiar <i class="fa-solid fa-clipboard"></i>';
+        topicContent[i].style.height = topicContent[i].scrollHeight + "px";
     })
 
     copy[i].addEventListener("click", e => {
         e.preventDefault();
         navigator.clipboard.writeText(texto);
+        copy[i].innerHTML = 'Copiado <i class="fa-solid fa-check"></i>';
     })
 
 }

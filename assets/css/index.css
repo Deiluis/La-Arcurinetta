@@ -98,7 +98,7 @@ body {
 .about-us p, .about-course p {
     font-family: var(--parrafos-links);
     font-size: 2rem;
-    width: 70%;
+    width: clamp(70%, 800px, 90%);
     text-align: center;
     line-height: 2;
     letter-spacing: 1.1;
