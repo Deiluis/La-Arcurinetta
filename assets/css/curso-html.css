@@ -127,6 +127,12 @@ code {
     cursor: pointer;
 }
 
+.topic-subtitle {
+    font-size: 3rem;
+    font-family: var(--titulos);
+    padding: 3rem 0 2rem;
+}
+
 .topic p, .topic li {
     font-size: 1.6rem;
     font-family: var(--parrafos-links);
@@ -145,6 +151,11 @@ code {
     padding: 5rem 1rem 3rem;
 }
 
+#selectors .code-title,
+#specificity .code-title {
+    padding: 1rem 0;
+}
+
 .code-section {
     width: 100%;
     display: grid;
@@ -152,6 +163,11 @@ code {
     grid-template-columns: 50% 45%;
     column-gap: 5%;
     row-gap: 5%;
+}
+
+#selectors .code-section,
+#specificity .code-section {
+    margin-bottom: 3rem;
 }
 
 .buttons {
@@ -180,7 +196,7 @@ code {
     color: var(--negro);
     background-color: var(--blanco);
     padding: 5px;
-    overflow: scroll;
+    overflow-y: scroll;
     border: 3px solid #bbb;
 }
 
@@ -189,7 +205,7 @@ code {
     font-size: 2rem;
     background-color: var(--blanco);
     color: var(--negro);
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .result h1,
@@ -223,7 +239,7 @@ code {
     width: 100%;
 }
 
-.tag {
+.tag, .selector {
     color: brown;
 }
 

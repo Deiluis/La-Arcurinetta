@@ -16,6 +16,8 @@
     <script src="https://kit.fontawesome.com/41b6154676.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <style></style>
     
     <header>
 
@@ -64,33 +66,499 @@
                 En 1994, el <strong>W3C</strong> o <em>World Wide Web Consortium</em> (la organización encargada de crear los estandares web) propuso un concurso para la creación de un lenguaje web capaz de darle estilos a HTML. Se presentaron en total nueve propuestas, pero solo dos fueron tomadas en cuenta: <strong>CHSS</strong> o <em>Cascading HTML Style Sheets</em>, creado por Håkon Wium Lie, y <strong>SSP</strong> o <em>Stream-based Stylesheet Proposal</em>, creado por Bert Bos.
             </p>
             <p>
-                A finales de 1994 e inicios de 1995, Lie y Bos decidieron unirse para definir un nuevo lenguaje que tomaba lo mejor de cada una de estas propuestas. De
+                A finales de 1994 e inicios de 1995, Lie y Bos decidieron unirse para definir un nuevo lenguaje que tomaba lo mejor de cada una de estas propuestas. De esa union nacio <strong>CSS</strong> o <em>Cascading Style Sheets</em>.
+            </p>
+
+            <h3>¿Cómo siguió?</h3>
+            <p>
+                A principios de 1995 el <strong>W3C</strong> decide apostar por el desarrollo y estandarización de CSS, añadiendolo a su grupo de trabajo junto con HTML. Para 1996 se publicó la primera recomendación oficial, llamada CSS nivel 1, o CSS 1.
+            </p>
+            <p>
+                En mayo de 1998 se publica la segunda recomendación de CSS, CSS 2. En ese mismo año comienza el desarrollo de CSS 3, el cual se fue actualizando y se utiliza hasta hoy en día.
             </p>
         </section>
 
         <section class="contents" id="contents">
+
             <h2 class="contents-title">Contenidos</h2>
 
-            <div class="topic" id="properties">
-                <h3 class="topic-title">Propiedades en CSS</h3>
+            <div class="topic" id="basic-structure">
+                <h3 class="topic-title">Estructura básica de CSS</h3>
 
                 <div class="topic-content">
+
+                    <p>
+                        CSS es un lenguaje que se utiliza para dar estilos a los distintos elementos que creamos en HTML. Para esto, cuenta con una estructura conformada por 4 componentes básicos:
+                    </p>
+
+                    <ul>
+                        <li>El selector</li>
+                        <li>Las llaves</li>
+                        <li>Las reglas CSS</li>
+                    </ul>
+
+                    <h4 class="topic-subtitle">Selectores</h4>
+                    <p>
+                        Un selector es un componente que se utiliza mismamente para seleccionar un elemento que tenemos en nuestro HTML y aplicar estilos sobre el mismo. Este puede ser varios tipos, los cuales abordaremos en un próximo capítulo. En este capítulo hablaremos sobre los selectores por elemento los cuales se definen con el mismo nombre del elemento el cual queremos seleccionar.
+                    </p>
+
+                    <h4 class="topic-subtitle">Llaves</h4>
+                    <p>
+                        Seguido de cada selector, se colocan unas <code>{ }</code> (llaves, o llaves curvas), las cuales encerrarán todas las propiedades que tendrá el elemento seleccionado.
+                    </p>
+
+                    <h4 class="topic-subtitle">Reglas CSS</h4>
+                    <p>
+                        Las reglas CSS, establecen o modifican las propiedades o caracteristicas del elemento seleccionado con el selector previamente escrito. Cada una de estas reglas se compone por:
+                    </p>
+
+                    <ul>
+                        <li>El nombre de la propiedad</li>
+                        <li>Dos puntos <code>:</code></li>
+                        <li>El valor de la propiedad</li>
+                        <li>Un punto y coma <code>;</code></li>
+                    </ul>
+
+                    <p>
+                        El nombre de la propiedad indica que propiedad queremos establecer o modificar. Los dos puntos indican que se establecerá el valor. El valor es el parámetro a establecer o modificar de la propiedad. Finalmente, el punto y coma indica el fin de la regla, y la posibilidad de iniciar una nueva.
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">h1</span> {<br>
+                            <span class="property">color</span>: <span class="value">red</span>;<br>
+                            }<br>
+                        </div>
+                    
+                        <div class="result">
+                            <h1>Hola mundo</h1>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="topic" id="types-of-css">
+                <h3 class="topic-title">Maneras de usar CSS</h3>
+
+                <div class="topic-content">
+                    <p>
+                        Existen 3 formas diferentes de aplicar estilos a nuestros elementos HTML con CSS. Estas formas son:
+                    </p>
+
+                    <ol>
+                        <li>Utilizando el atributo style</li>
+                        <li>Utilizando el elemento style</li>
+                        <li>Vínculando una hoja de estilos externa</li>
+                    </ol>
+
+                    <h4 class="topic-subtitle">
+                        Atributo style
+                    </h4>
+                    <p>
+                        En cada elemento HTML se puede aplicar el atributo <code>style</code>, utilizando como valor las reglas CSS que queremos que se apliquen a dicho elemento, quedando de la siguiente manera: <code>&lt;h1 style="color:red"&gt;Titulo&lt;/h1&gt;</code>.
+                    </p>
+
+                    <p>
+                        Aunque esta es la forma menos recomendada, ya que el código HTML se mezcla con el código CSS, y cada propiedad que se aplica a los elementos es individual; no pueden utilizarse en varios elementos a la vez si no se escribe en cada elemento.
+                    </p>
+
+                    <h4 class="topic-subtitle">
+                        Elemento style
+                    </h4>
+                    <p>
+                        En el <code>body</code> de nuestro archivo HTML puede aplicarse el elemento <code>&lt;style&gt;&lt;/style&gt;</code> utilizando como contenido el código CSS que deseamos aplicar, quedando de la siguiente manera:<br><br>
+                        <code>&lt;style&gt;</code><br>
+                        <code>h1 {</code><br>
+                        <code>color: blue</code><br>
+                        <code>}</code><br>
+                        <code>&lt;/style&gt;</code><br><br>
+                    </p>
+
+                    <p>
+                        Utilizar esta forma es más recomendada que utilizar el atributo style ya que el código CSS no esta directamente sobre los elementos, pero aún sigue ligado al código HTML y no puede utilizarse en otros archivos, por lo que no es la forma más recomendada.
+                    </p>
+
+                    <h4 class="topic-subtitle">
+                        Hoja de estilos externa
+                    </h4>
+                    <p>
+                        En el <code>head</code> de nuestro archivo HTML, puede incluirse el elemento <code>link</code> el cual se utiliza para vincular archivos CSS externos, utilizando como atributos <code>rel</code> donde se introduce el tipo de vínculo, y <code>href</code> donde se introduce la ruta de donde esta ubicado nuestro archivo CSS, incluyendo la extensión .css, quedando de la siguiente manera: <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+                    </p>
+
+                    <p>
+                        Esta es la forma más recomendada, ya que mantiene total independencia del código HTML y puede aplicarse en varios archivos HTML.
+                    </p>
 
                 </div>
 
             </div>
 
             <div class="topic" id="selectors">
-                <h3 class="topic-title">Selectores</h3>
+                <h3 class="topic-title">Tipos de selectores</h3>
 
                 <div class="topic-content">
+
+                    <p>
+                        Existen diferentes tipos de selectores, veremos los más comunes y como funcionan. Por ejemplo:
+                    </p>
+
+                    <ul>
+                        <li>Por elemento</li>
+                        <li>Por clase</li>
+                        <li>Por identificador único o id</li>
+                        <li>Por jerarquía</li>
+                    </ul>
+
+                    <p>
+                        Estos son los tipos de selectores más comunes, aunque existen otros que podemos utilizar:
+                    </p>
+
+                    <ul>
+                        <li>Por atributo</li>
+                        <li>Por pseudoclase</li>
+                    </ul>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por elemento
+                    </h4>
+                    <p>
+                        Los selectores por elemento refieren a selectores generales los cuales se basan en el nombre de los elementos. Todas las propiedades que se apliquen a estos selectores, se le aplicaran a los elementos que le correspondan. Por ejemplo los selectores <code>h1</code>, <code>p</code>, <code>div</code>, o <code>*</code>. Este ultimo, el <code>*</code> es llamado el selector universal, ya que identifica a todos los elementos de HTML.
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">h1</span> {<br>
+                            <span class="property">color</span>: <span class="value">blue</span>;<br>
+                            }<br>
+                        </div>
+                    
+                        <div class="result">
+                            <h1>Hola mundo</h1>
+                        </div>
+                    </div>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por clase
+                    </h4>
+                    <p>
+                        Los selectores por clase aplican propiedades a elementos los cuales tengan una clase especifica. Por ejemplo, si un elemento o serie de elementos poseen la clase <code>parrafo</code>, para armar el selector se utiliza un <code>.</code> (punto) y el nombre de la clase, quedando el selector como <code>.parrafo</code>.
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">.parrafo</span> {<br>
+                            <span class="property">color</span>: <span class="value">red</span>;<br>
+                            }<br>
+                        </div>
+                    
+                        <div class="result">
+                            <p class="parrafo">Esto es un párrafo</p>
+                            <p class="parrafo">Esto es un párrafo</p>
+                            <p class="parrafo">Esto es un párrafo</p>
+                            <p class="parrafo">Esto es un párrafo</p>
+                        </div>
+                    </div>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por id
+                    </h4>
+                    <p>
+                        Los selectores por id (o identificador) aplican propiedades a un único elemento el cual tenga un id especifico. Por ejemplo, si un elemento posee el id <code>titulo</code>, para armar el selector se utiliza un <code>#</code> (hashtag) y el nombre del id, quedando el selector como <code>#titulo</code>.
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">#titulo</span> {<br>
+                            <span class="property">color</span>: <span class="value">green</span>;<br>
+                            }<br>
+                        </div>
+                    
+                        <div class="result">
+                            <h4 id="titulo">Esto es un título con id</h4>
+                            <h4>Esto es un título sin id</h4>
+                        </div>
+                    </div>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por jerarquía o descendencia
+                    </h4>
+                    <p>
+                        Cuando un elemento está dentro de otro elemento, se dice que el primer elemento es hijo del segundo elemento, y el segundo elemento es padre del primer elemento. A esto se le llama la "descendencia de elementos" y puede utilizado para seleccionar elementos en CSS.
+                    </p>
+                    <p>
+                        La descendencia de selectores puede armarse con cualquier otro tipo de selectores. Por ejemplo, si queremos seleccionar un <code>b</code> que esta dentro de un <code>p</code>, podemos armarlo de la siguiente manera: <code>p b</code> (notese el espacio entre selectores). También puede armarse con clases: <code>.clase1 .clase2</code> (en este caso estamos seleccionando un elemento de con la clase <code>.clase2</code>, dentro de otro elemento con la clase <code>clase1</code>).
+                    </p>
+                    <p>
+                       Esto también funciona con ids, por ejemplo: <code>#elemento1 #elemento2</code>, o de manera mixta, con cualquier otro tipo de selector: <code>#elemento1 .clase2 h2</code> (en este caso, estamos seleccionando un h2, dentro de un elemento con la clase <code>clase2</code>, dentro de otro elemento con el id <code>elemento1</code>).
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">p b</span> {<br>
+                            <span class="property">color</span>: <span class="value">orange</span>;<br>
+                            }<br>
+                        </div>
+                    
+                        <div class="result">
+                            <p>Esto es un parrafo con una palabra en <b>negrita</b></p>
+                        </div>
+                    </div>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por atributo
+                    </h4>
+                    <p>
+                        Los selectores por atributo utilizan los atributos de los elementos para seleccionar a estos ultimos. Estos selectores pueden armarse de dos maneras:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Utilizando el nombre del elemento, y el nombre del atributo entre corchetes. Imaginemos que queremos seleccionar un <code>h6</code> el cual tiene el atributo <code>grande</code>. El selector se armaría de la siguiente manera: <code>h6[tamano]</code>.
+                        </li>
+                        <li>
+                            Utilizando el nombre del elemento, nombre del atributo, y un valor para el atributo, el cual lo vuelve más especifico. El selector se armaría de la siguiente manera: <code>h6[tamano="grande"]</code>.
+                        </li>
+                    </ul>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">h6[tamano]</span> {<br>
+                            <span class="property">color</span>: <span class="value">blue</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">h6[tamano="grande"]</span> {<br>
+                            <span class="property">color</span>: <span class="value">red</span>;<br>
+                            }<br><br>
+                        </div>
+                    
+                        <div class="result">
+                            <h6 tamano="grande">h6 con atributo tamano y valor grande</h6>
+                            <h6 tamano="chico">h6 con atributo tamano y valor chico</h6>
+                            <h6>h6 sin atributo tamano</h6>
+                        </div>
+                    </div>
+
+                    <h4 class="topic-subtitle">
+                        Selectores por pseudoclase
+                    </h4>
+                    <p>
+                        Las pseudoclases son clases predefinidas en CSS las cuales poseen ciertas funcionalidades que son aplicadas a los elementos seleccionados, o también idenfitican a los elementos de otras maneras. Algunas de las pseudoclases más utilizadas y sus funciones son:
+                    </p>
+                    <ul>
+                        <li>
+                            <code>:hover</code>: Aplica estilos al pasar el mouse sobre el elemento o tocarlo (en celulares).
+                        </li>
+                        <li>
+                            <code>:active</code>: Aplica estilos sobre el elemento al hacer click sobre él (todo el tiempo que dure el click).
+                        </li>
+                        <li>
+                            <code>:first-child</code>: Si existe más de un elemento al que se esta seleccionando, con esta pesudoclase se selecciona especificamente al primero de todos ellos. Si solo existe un elemento de ese tipo, selecciona ese único.
+                        </li>
+                        <li>
+                            <code>:last-child</code>: Actúa de manera similar a first-child, con la diferencia de que selecciona al último de esos elementos.
+                        </li>
+                        <li>
+                            <code>:nth-child(n)</code>: Si existe más de un elemento al que se esta seleccionando, con esta pesudoclase se selecciona especificamente al numero de elemento que se introduzca entre parentesis; es decir, si quisieramos seleccionar al quinto elemento de una serie de elementos con una misma clase, debemos introducir un 5 entre los parentesis, quedando: <code>:nth-child(5)</code>.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Para utilizar cualquiera de estas pseudoclases, se utiliza cualquier selector que queramos usar para referenciar al elemento, seguido de <code>:</code> (dos puntos) y el nombre del pseudoelemento. Por ejemplo <code>.clase:hover</code>.
+                    </p>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">p:hover</span> {<br>
+                            <span class="property">color</span>: <span class="value">violet</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:active</span> {<br>
+                            <span class="property">color</span>: <span class="value">red</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:first-child</span> {<br>
+                            <span class="property">color</span>: <span class="value">blue</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:last-child</span> {<br>
+                            <span class="property">color</span>: <span class="value">green</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:nth-child(3)</span> {<br>
+                                <span class="property">background-color</span>: <span class="value">orange</span>;<br>
+                                }<br><br>
+                        </div>
+                    
+                        <div class="result">
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
 
             <div class="topic" id="specificity">
-                <h3 class="topic-title">Especificidad</h3>
+                <h3 class="topic-title">Especificidad y cascada</h3>
+
+                <div class="topic-content">
+
+                    <p>
+                        En CSS existen dos conceptos que serán cruciales a la hora de escribir nuestro código: La especificidad de selectores y la cascada de estilos.
+                    </p>
+
+                    <h4 class="topic-subtitle">Especificidad</h4>
+
+                    <p>
+                        La especificidad se refiere a que tan especifico es un selector al referenciar un elemento HTML. Mientras mayor especificidad tenga un selector, más relevancia tendrá sobre los otros selectores que se le apliquen al mismo elemento. Existen dos ordenes de especificidad: Según las formas en las que se utiliza CSS, como también dentro del código CSS.
+                    </p>
+
+                    <p>
+                        El orden de especificidad según las formas en las que se utiliza CSS es:
+                    </p>
+
+                    <ol>
+                        <li>Estilos en línea (atributo style)</li>
+                        <li>Elemento style dentro del HTML</li>
+                        <li>Hoja de estilos externa</li>
+                    </ol>
+
+                    <p>
+                        El orden de especificidad dentro del código CSS es:
+                    </p>
+
+                    <ol>
+                        <li>Sentencia <code>!important</code></li>
+                        <li>Identificadores</li>
+                        <li>Clases</li>
+                        <li>Pseudoclases</li>
+                        <li>Atributos</li>
+                        <li>Elementos</li>
+                        <li>Pseudoelementos</li>
+                    </ol>
+
+                    <h4 class="topic-subtitle">Cascada</h4>
+
+                    <p>
+                        Como su propio nombre lo indica, CSS es un lenguaje de hojas de estilos en cascada. La cascada refiere a que los selectores y las reglas CSS se escriben una debajo de la otra. Ahora ¿Qué pasaría si escribimos dos reglas con valores diferentes en selectores separados? Pueden pasar dos cosas:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Si ambos selectores tienen la misma especificidad, actúa la cascada y se aplican los estilos del último selector escrito.
+                        </li>
+                        <li>
+                            Si los selectores tienen una especificidad diferente, se aplicaran los estilos del selector con mayor especificidad, sin importar la cascada.
+                        </li>
+                    </ol>
+
+                    <h3 class="code-title">Veamos un ejemplo gráfico:</h3>
+    
+                    <div class="code-section">
+                        <div class="buttons">
+                            <a href="#" class="execute button">Ejecutar <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="restart button">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></a>
+                            <a href="#" class="copy button">Copiar <i class="fa-solid fa-clipboard"></i></a>
+                        </div>
+                
+                        <div class="code">
+                            <span class="selector">p:hover</span> {<br>
+                            <span class="property">color</span>: <span class="value">violet</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:active</span> {<br>
+                            <span class="property">color</span>: <span class="value">red</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:first-child</span> {<br>
+                            <span class="property">color</span>: <span class="value">blue</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:last-child</span> {<br>
+                            <span class="property">color</span>: <span class="value">green</span>;<br>
+                            }<br><br>
+
+                            <span class="selector">p:nth-child(3)</span> {<br>
+                                <span class="property">background-color</span>: <span class="value">orange</span>;<br>
+                                }<br><br>
+                        </div>
+                    
+                        <div class="result">
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                            <p>Esto es un párrafo</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="topic" id="measures">
+                <h3 class="topic-title">Tipos de medidas</h3>
 
                 <div class="topic-content">
 
@@ -152,15 +620,6 @@
 
             </div>
 
-            <div class="topic" id="measures">
-                <h3 class="topic-title">Tipos de medidas</h3>
-
-                <div class="topic-content">
-
-                </div>
-
-            </div>
-
             <div class="topic" id="position">
                 <h3 class="topic-title">Propiedad position</h3>
 
@@ -197,7 +656,6 @@
 
             </div>
 
-
         </section>
 
         <section class="finish" id="finish">
@@ -223,5 +681,7 @@
         <a href="https://github.com/Deiluis" title="Github"><i class="fa-brands fa-github"></i></a>
     </footer>
 
+    <script src="../assets/js/ejecutar-css.js"></script>
+    <script src="../assets/js/desplegar.js"></script>
 </body>
 </html>
